@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style/style.css" rel="stylesheet">
+    <title>DotaSchool</title>
+</head>
+<body>
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <div class="menu__box">
+        <a href="index.html"><img src="image/nav.png" class="dota2"></a>
+        <div class="menu1">
+            <button class="accordion" onclick="accMenu1()">Обучение</button>
+            <div class="panel1">
+                <a class="courses">Курсы</a>
+                <br><a class="teacher">Наставники</a>
+            </div>
+        </div>
+        <div class="menu2">
+            <button class="accordion" onclick="accMenu2()">Другие услуги</button>
+            <div class="panel2">
+                <a class="shop" href="./html/shop.html">Наш мерч</a>
+            </div>
+        </div>
+        <div class="menu3">
+            <button class="accordion" onclick="accMenu3()">О нас</button>
+            <div class="panel3">
+                <a href="./html/review.html" class="navreview">Отзывы</a>
+                <br><a class="contackt">Контакты</a>
+                <br><a class="aboutUs" href="./html/aboutUs.html">О компании</a>
+            </div>
+        </div>
+        <img src="image/basket.png" class="basket" onclick="toBasketIndex()">
+        <img src="image/guest.png" class="guest" onclick="openPopup()">
+        <img src="image/view.png" class="view">
+        <img src="./image/DotaSchool.png" class="DotaSchool" onclick="openIndexIndex()">
+        <button class="mapButton" onclick="openMapIndex()">карта сайта</button>
+    </div>
+    <div class="Popup">
+        <button onclick="closePopup()">Закрыть</button>
+        <button onclick="openReg()">Зарегестрироваться</button>
+        <button onclick="openAvtor()">Войти</button>
+    </div>
+    <div class="Avtor">
+        <button onclick="closeAvtor()">Закрыть</button>
+        <div class="AvtorDiv">
+            Введите ваш логин
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Введите ваш пароль
+            <input type="text" required placeholder="Введите вашу пароль">
+        </div>
+        <button onclick="avtor()">Войти</button>
+    </div>
+    <div class="Reg">
+        <button onclick="closeReg()">Закрыть</button>
+        <div class="RegDIv">
+            Имя пользователя:
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Электронная почта:
+            <input type="text" required placeholder="Введите вашу электронную почту">
+            Пароль:
+            <input type="text" required placeholder="Введите пароль">
+            Подтверждение пароля:
+            <input type="text" required placeholder="Подтвердите пароль">
+        </div>
+        <button onclick="reg()">Регистрация</button>
+    </div>
+    <a id="backToTop" class="backToTopButton">
+        <i class="arrow-up">↑</i>
+    </a>
+    <div class="betBoom">
+        <p>Наш спонсор</p>
+        <img src="image/betBoom.svg" alt="Наш спонсор">
+    </div>
+    <div class="start">
+        <div class="blind start_text">
+            <p>Прокачай свой <br>скилл в DOTA2!</p>
+            <br>Присоединяйся к нам. Ты получишь <br>продуктивные тренировки  с лучшими <br>тренерами нашей школы!
+        </div>
+    </div>
+    <div class="start_image">
+        <div class="first_image">
+            <img src="image/people.png">
+            <P>ДЛЯ ЛЮБОГО ВОЗРАСТА</P>
+        </div>
+        <div class="second_image">
+            <img src="image/lvl.png">
+            <p>ДЛЯ ЛЮБОГО УРОВНЯ ИГРЫ</p>
+        </div>
+        <div class="third_image">
+            <img src="image/target.png">
+            <p>ДЛЯ ЛЮБЫХ ЦЕЛЕЙ</p>
+        </div>
+    </div>
+    <p class="first">Если ты присоединишься к нам, ты получишь:</p>
+    <div class="blind first_div">
+            <div class="first_div_main11">
+                <img src="image/main1-1.png">
+                <p>комплексный набор знаний и навыков, <br>необходимых для достижения успеха в <br>игре</p>
+            </div>
+            <div class="first_div_main12">
+                <img src="image/main1-2.png">
+                <p>Вы улучшите понимание ключевых игровых <br>механик, стратегий и тактик.</p>
+            </div>
+            <div class="first_div_main13">
+                <img src="image/main1-3.png">
+                <p>Научитесь эффективно координировать действия с <br>командой, принимать взвешенные решения <br>в критических ситуациях 
+            </p>
+            </div>
+            <div class="first_div_main21">
+                <img src="image/main1-4.png">
+                <p>адаптироваться к различным <br>стилям игры противника</p>
+            </div>
+            <div class="first_div_main22">
+                <img src="image/main1-5.png">
+                <p>доступ к эксклюзивным ресурсам, включая <br>гайды, аналитические материалы и <br>инструменты для тренировок</p>
+            </div>
+            <div class="first_div_main23">
+                <img src="image/main1-6.png">
+                <p>Регулярные тренировки, участие в <br>турнирах и общение с другими <br>студентами школы</p>
+            </div>
+    </div>
+    <div class="blind first_end">
+        <p>Мы гарантируем индивидуальный подход к каждому ученику, учитывая <br>его сильные и слабые стороны для максимально эффективного обучения.</p>
+    </div>
+    <p class="blind second">Мы можем помочь если ты:</p>
+    <div class="second_div">
+            <div class="second_div_main11">
+                <img src="image/main2-1.png">
+                <p>Хочешь научиться играть с нуля и <br>найти команду</p>
+                <p>Научиться качественно анализировать свою <br>игру - залог скорейшего прогресса, а со стороны <br>тренеру всегда виднее</p>
+            </div>
+            <div class="second_div_main12">
+                <img src="image/main2-2.png">
+                <p>Застрял на месте и хочешь <br>разобраться в причинах</p>
+                <p>В начале пути необходимо ознакомиться со <br>всеми базовыми аспектами игры, чтобы ты <br>мог уверенно действовать</p>
+            </div>
+            <div class="second_div_main13">
+                <img src="image/main2-3.png">
+                <p>Ставишь цель поднять свой <br>рейтинг и скилл</p>
+                <p>Структурированная программа обучения и <br>тренер помогут тебе раскрыть потенциал на <br>максимум и сделать качественный рывок
+            </p>
+            </div>
+            <div class="second_div_main21">
+                <img src="image/main2-4.png">
+                <p>Желаешь получить больше <br>турнирной практики</p>
+                <p>Турнирный опыт поможет тебе лучше всего <br>узнать свои сильные и слабые стороны, усилить <br>командное коммуникацию</p>
+            </div>
+            <div class="second_div_main22">
+                <img src="image/main2-5.png">
+                <p>Мечтаешь о карьере <br>киберспортсмена</p>
+                <p>На вершине своего индивидуального мастерства <br>пора задуматься о команде, с который вы вместе <br>будете двигаться к общей цели</p>
+            </div>
+    </div>
+    <div class="blind second_end">
+        <p>Если вы узнаете в этом  себя и хотите все исправить присоединяйтесь к нам! </p>
+    </div>
+    <p class="blind third">Учебный план:</p>
+    <div class="third_div">
+        <div class="third_div_main1">
+            <div class="third_div_main11">
+                <p>Основы Dota2</p>
+                <img src="image/main3-1.png">
+                <p>Введение в Dota 2: интерфейс, роли, режимы игры.
+                <br>Герои: классификация, атрибуты, навыки. Практика: выбор героя под ситуацию.
+                <br>Предметы: типы, рецепты, применение. Практика: сборка эффективных билдов.
+                <br>Карта: понимание лейаута, вардинг, безопасные зоны.</p>
+            </div>
+            <div class="third_div_main12">
+                <p>Стратегия и Тактика</p>
+                <img src="image/main3-2.png">
+                <p>Лейнинг: фарм, харасс, денай. Практика: эффективный лейнинг против разных героев.
+                <br>Роуминг и ганги: выбор цели, тайминги, исполнение.
+                <br>Командная работа: коммуникация, позиционирование, координация.
+                <br>Драки: инициация, контроль, фокус. Практика: симуляция командных драк.</p>
+            </div>
+            <div class="third_div_main13">
+                <p>Продвинутые Концепции</p>
+                <img src="image/main3-3.png">
+                <p>Контр-пикинг: анализ пиков, выбор героев для противодействия.
+                <br>Фарм и экономика: оптимизация фарма, управление ресурсами.
+                <br>Вардинг и контроль карты: продвинутые позиции вардов, контр-вардинг.
+                <br>Мета-игра: анализ текущей меты, адаптация к изменениям.</p>
+            </div>
+        </div>
+    </div>
+    <div class="blind third_end">
+        <p>Благодаря нашим тренировкам вы сможете засиять в ранговых играх и даже на киберспротивной сцене</p>
+    </div>
+    <p class="blind fourth">Запись на пробное занятие: </p>
+    <div class="fourth_div">
+        <p>Убедитесь в нашем профессианализме записавшись на наше пробное 
+            занятие и узнайте больше о себе и о том чего вам не дастает</p>
+        <div class="fourth_div_main">
+            <img src="image/main4.png">
+            <p>Стань лучше пройдя наше пробное занятие</p>
+            <a href="./html/zapis.html"><button>Записаться</button></a>
+        </div>
+    </div>
+    <div class="blind fourth_end">
+        <p>Благодаря нашим тренировкам вы сможете засиять в ранговых играх и даже на киберспротивной сцене</p>
+    </div>
+    <p class="blind fifth">Наши наставники:</p>
+    <div class="fifth_div">
+        <button onclick="back()"></button>
+            <div class="fifth_main1">
+                <div class="fifth_main11">
+                    Макар начал свою 
+                    карьеру в Dota 2 в 
+                    2013 году. С тех пор 
+                    он прошел путь от 
+                    любительских  
+                    турниров до 
+                    участия в 
+                    международных 
+                    соревнованиях. Его 
+                    сильные стороны — 
+                    это глубокое 
+                    понимание 
+                    механики игры и 
+                    способность 
+                    быстро 
+                    адаптироваться.
+                </div>
+                <div class="fifth_main12">
+                    <br>Макар Дроздов
+                    <br>"uglyfacekid228"
+                    <img src="image/main5-1.png">
+                </div>
+                <div class="fifth_main13">
+                    MMR: 7000+ 
+                    Позиция: Мид 
+                    Мид-гейм 
+                    стратегии, 
+                    контроль карты, 
+                    фарм.
+                </div>
+            </div>
+            <div class="fifth_main2">
+                <div class="fifth_main21">
+                    Марина начала 
+                    играть в Dota 2 в 
+                    2015 году и быстро 
+                    завоевала 
+                    репутацию одного 
+                    из лучших керри- 
+                    игроков в своем 
+                    регионе. Она 
+                    участвовала в 
+                    нескольких 
+                    крупных турнирах, 
+                    включая региональные 
+                    лиги и онлайн-турниры.
+                </div>
+                <div class="fifth_main22">
+                    <br>Марина Смирнова
+                    <br>"CrystalQueen" 
+                    <img src="image/main5-2.png">
+                </div>
+                <div class="fifth_main23">
+                    MMR: 7200+ 
+                    Позиция: Керри 
+                    Керри-позиция, 
+                    тайминг 
+                    предметов, 
+                    командная 
+                    координация.
+                </div>
+            </div>
+            <div class="fifth_main3">
+                <div class="fifth_main31">
+                    Дмитрий имеет 
+                    более пяти лет опыта 
+                    работы тренером в 
+                    Dota 2. Он работал с 
+                    различными 
+                    командами на 
+                    профессиональной 
+                    сцене, помогая им 
+                    достигать высоких 
+                    результатов на 
+                    турнирах.
+                </div>
+                <div class="fifth_main32">
+                    <br>Дмитрий Петров
+                    <br>"CoachD"
+                    <img src="image/main5-3.png">
+                </div>
+                <div class="fifth_main33">
+                    Командная игра,
+                    стратегия,
+                    психология.
+                </div>
+            </div>
+            <div class="fifth_main4">
+                <div class="fifth_main41">
+                    Екатерина начала 
+                    свою карьеру в Dota 
+                    2 как саппорт еще 
+                    в 2014 году. За годы 
+                    игры она накопила 
+                    богатый опыт, 
+                    участвуя как в 
+                    любительских, так и 
+                    профессиональных 
+                    турнирах. известна 
+                    своим умением 
+                    контролировать 
+                    карту и обеспечивать 
+                    команду 
+                    необходимыми 
+                    ресурсами для 
+                    победы.
+                </div>
+                <div class="fifth_main42">
+                    <br>Екатерина Лебедева
+                    <br>"DotaStar"
+                    <img src="image/main5-4.png">
+                </div>
+                <div class="fifth_main43">
+                    MMR: 7000+ 
+                    Позиция: Саппорт 
+                    Саппорт-позиция, 
+                    контроль карты, 
+                    взаимодействие с 
+                    керри.
+                </div>
+            </div>
+        <button onclick="next()"></button>
+    </div>
+    <div class="blind fifth_end">
+        <p>Готовы прокачать свои навыки? Запишитесь на пробный урок с одним из наших наставников уже сегодня!</p>
+    </div>
+    <p class="blind sixth">Наши курсы:</p>
+    <div class="sixth_div">
+        <div class="sixth_div_main1">
+            <p>Курсы для начинающих</p>
+            <br>1. Основы Dota 2
+            <br>Длительность: 4 недели
+            <br>Этот курс предназначен для новичков, которые только начинают
+            <br>свой путь в Dota 2. Вы узнаете о базовых механиках игры, ролях
+            <br>героев, а также о том, как правильно фармить и участвовать в
+            <br>командных боях.
+            <br>Темы курса:
+            <br>Введение в игру и интерфейс
+            <br>Роли и позиции героев
+            <br>Основы фарма и контроля карты
+            <br>Командная работа и коммуникация
+            <p>Стоимость: 2990₽</p>
+            <button class="add-to-cart" data-course='{"title":"Курсы для начинающих","description":"Основы Dota 2","cost":"2990"}'>Добавить в корзину</button>
+        </div>
+        <div class="sixth_div_main2">
+            <p>Курсы для среднего уровня</p>
+            <br>2. Продвинутые стратегии
+            <br>Длительность: 6 недель
+            <br>Этот курс подходит для игроков с опытом, которые хотят улучшить
+            <br>свои навыки и научиться более сложным стратегиям. Мы рассмотрим
+            <br>различные аспекты мид-гейма и лейта, а также научим вас
+            <br>адаптироваться к метагейму.
+            <br>Темы курса:
+            <br>Анализ матчей и разбор ошибок
+            <br>Тайминг предметов и их влияние на игру
+            <br>Командные стратегии и синергия героев
+            <br>Психология игры и управление эмоциями
+            <p>Стоимость: 4990₽</p>
+            <button class="add-to-cart" data-course='{"title":"Курсы для среднего уровня","description":"Продвинутые стратегии","cost":"4990"}'>Добавить в корзину</button>
+        </div>
+        <div class="sixth_div_main3">
+            <p>Курсы для продвинутых игроков</p>
+            <br>3. Мастерство на позиции
+            <br>Длительность: 8 недель
+            <br>Этот курс предназначен для игроков, которые хотят стать экспертами
+            <br>в своей роли (керри, мид или саппорт). Вы получите индивидуальные
+            <br>занятия с наставником, который поможет вам отточить ваши навыки.
+            <br>Темы курса:
+            <br>Глубокий анализ выбранной роли
+            <br>Специфика героев и их взаимодействие
+            <br>Тактики против различных противников
+            <br>Разработка личной стратегии игры
+            <p>Стоимость: 5990₽</p>
+            <button class="add-to-cart" data-course='{"title":"Курсы для продвинутых игроков","description":"Мастерство на позиции","cost":"5990"}'>Добавить в корзину</button>
+        </div>
+    </div>
+    <div class="blind sixth_end">
+        <p>Готовы начать свое путешествие в мир Dota 2? Присоединяйтесь к нашим курсам уже сегодня</p>
+    </div>
+    <p class="blind seventh">Отзывы:</p>
+    <div class="seventh_div">
+            <div class="review">
+                <div class="reviewsStar">
+                    <p><div class="stars">★★★★</div>★</p>
+                </div>
+                <div class="reviews">
+                    <p>Александр К.</p>
+                    "Я начал играть в Dota 2 совсем недавно и не
+                    знал, с чего начать. Курс «Основы Dota 2» стал
+                    для меня настоящим открытием! Наставник
+                    объяснил все нюансы игры, и теперь я
+                    чувствую себя уверенно на поле боя.
+                    Рекомендую всем новичкам!"
+                </div>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <div class="reviews">
+                    <p>Мария С.</p>
+                    "Курс «Продвинутые стратегии» помог мне
+                    поднять свой MMR на 1000 пунктов всего за
+                    месяц! Я научилась правильно анализировать
+                    свои игры и делать выводы. Большое спасибо
+                    моему наставнику за поддержку и советы!"
+                </div>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <div class="reviews">
+                    <p>Дмитрий П.</p>
+                    "Я уже играл в Dota 2 несколько лет, но всегда
+                    хотел улучшить свои навыки на позиции
+                    саппорта. Курс «Мастерство на позиции»
+                    оказался именно тем, что мне нужно! Теперь я
+                    лучше понимаю свою роль в команде и как
+                    взаимодействовать с керри."
+                </div>
+            </div>
+            <div class="review">
+                <div class="reviewsStar">
+                    <p><div class="stars">★★★★</div>★</p>
+                </div>
+                <div class="reviews">
+                    <p>Екатерина Л.</p>
+                    "Командный курс был просто великолепен! Мы
+                    с друзьями записались вместе, и это было
+                    отличное решение. Мы научились работать как
+                    единое целое, а также разработали
+                    собственные стратегии для матчей. Теперь мы
+                    играем гораздо лучше!"
+                </div>
+            </div>
+            <div class="review">
+                <p class="stars">★★★★★</p>
+                <div class="reviews">
+                    <p>Игорь Т.</p>
+                    "Индивидуальные занятия с наставником
+                    помогли мне разобраться в сложных аспектах
+                    игры, которые я не мог понять сам. Я получил
+                    много полезных советов и теперь чувствую
+                    себя более уверенно в матчах."
+                </div>
+            </div>
+            <div class="review">
+                <div class="reviewsStar">
+                    <p><div class="stars">★★★★</div>★</p>
+                </div>
+                <div class="reviews">
+                    <p>Сергей М.</p>
+                    "Я всегда считал себя средним игроком, но
+                    после прохождения курса «Командная игра и
+                    тактика» я понял, что могу гораздо больше!
+                    Уроки по взаимодействию с командой и
+                    разработке стратегий помогли мне не только
+                    улучшить свою игру, но и стать лидером в
+                    команде."
+                </div>
+            </div>
+        <button class="seventh_div_button" onclick="toReviews()">Оставить отзыв</button>
+    </div>
+    <footer>
+        © 2024-2025 DotaPro School. Все права защищены.
+        <br>Следите за нами:
+        <div class="footer_main1">
+            <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
+        </div>
+        <div class="footer_main2">
+            <a href="./html/conf.html" style="color: white;">Политика конфиденциальности </a>
+            <a href="./html/polz.html" style="color: white;">| Пользовательское соглашение</a>
+        </div>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

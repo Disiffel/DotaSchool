@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <div class="menu__box">
+        <a href="../index.html"><img src="../image/nav.png" class="dota2"></a>
+        <div class="menu1">
+            <button class="accordion" onclick="accMenu1()">Обучение</button>
+            <div class="panel1">
+                <a class="courses" href="../index.html">Курсы</a>
+                <br><a class="teacher" href="../index.html">Наставники</a>
+            </div>
+        </div>
+        <div class="menu2">
+            <button class="accordion" onclick="accMenu2()">Другие услуги</button>
+            <div class="panel2">
+                <a class="shop" href="../html/shop.html">Наш мерч</a>
+            </div>
+        </div>
+        <div class="menu3">
+            <button class="accordion" onclick="accMenu3()">О нас</button>
+            <div class="panel3">
+                <a href="../html/review.html" class="navreview">Отзывы</a>
+                <br><a class="contackt">Контакты</a>
+                <br><a class="aboutUs" href="./html/aboutUs.html">О компании</a>
+            </div>
+        </div>
+        <img src="../image/basket.png" class="basket" onclick="toBasketIndex()">
+        <img src="../image/guest.png" class="guest" onclick="openPopup()">
+        <img src="../image/DotaSchool.png" class="DotaSchool" onclick="openIndex()">
+        <button class="mapButton" onclick="openMap()">карта сайта</button>
+    </div>
+    <div class="Popup">
+        <button onclick="closePopup()">Закрыть</button>
+        <button onclick="openReg()">Зарегестрироваться</button>
+        <button onclick="openAvtor()">Войти</button>
+    </div>
+    <div class="Avtor">
+        <button onclick="closeAvtor()">Закрыть</button>
+        <div class="AvtorDiv">
+            Введите ваш логин
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Введите ваш пароль
+            <input type="text" required placeholder="Введите вашу пароль">
+        </div>
+        <button onclick="avtor()">Войти</button>
+    </div>
+    <div class="Reg">
+        <button onclick="closeReg()">Закрыть</button>
+        <div class="RegDIv">
+            Имя пользователя:
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Электронная почта:
+            <input type="text" required placeholder="Введите вашу электронную почту">
+            Пароль:
+            <input type="text" required placeholder="Введите пароль">
+            Подтверждение пароля:
+            <input type="text" required placeholder="Подтвердите пароль">
+        </div>
+        <button onclick="reg()">Регистрация</button>
+    </div>
+    <a id="backToTop" class="backToTopButton">
+        <i class="arrow-up">↑</i>
+    </a>
+    <p class="mapHead">Карта сайта</p>
+    <div class="mapDiv">
+        <a href="../index.html"><button class="mapBtn">Главная</button></a>
+        <a href="aboutUs.html"><button class="mapBtn">О нас</button></a>
+        <a href="basket.html"><button class="mapBtn">Корзина</button></a>
+        <a href="conf.html"><button class="mapBtn">Политика конфиденциальности</button></a>
+        <a href="polz.html"><button class="mapBtn">Пользовательское соглашение</button></a>
+        <a href="review.html"><button class="mapBtn">Отзывы</button></a>
+        <a href="shop.html"><button class="mapBtn">Наш магазин</button></a>
+        <a href="zapis.html"><button class="mapBtn">Запись на пробный урок</button></a>
+    </div>
+    <footer>
+        © 2024-2025 DotaPro School. Все права защищены.
+        <br>Следите за нами:
+        <div class="footer_main1">
+            <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
+        </div>
+        <div class="footer_main2">
+            <a href="./html/conf.html" style="color: white;">Политика конфиденциальности </a>
+            <a href="./html/polz.html" style="color: white;">| Пользовательское соглашение</a>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: left;
+}
+
+.polzMain, .confMain, .rknMain {
+    padding: 10% 30% 10% 30%;
+}
+
+.rknMain img {
+    padding: 0 40% 0 40%;
+    width: 20%;
+    height: 20%;
+}
+
+.head {
+    text-align: center;
+    font-size: 52px;
+}
+
+#menu__toggle {
+    display: none;
+}
+
+.menu__btn {
+    display: none;
+}
+
+.menu__box {
+    display: flex;
+    justify-content: space-around;
+    height: 10%;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: rgba(38, 38, 38);
+    font-family: Arial;
+    top: 0;
+}
+
+.courses, .teacher, .contackt, .navreview, .shop {
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.dota2 {
+    padding-left: 50%;
+}
+
+.guest {
+    margin-top: 1%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
+.Popup, .Avtor {
+  position: fixed;
+  left: 90%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: #545454;
+  border: 1px solid #000;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+}
+
+.Reg {
+   position: fixed;
+  left: 90%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 228px;
+  background-color: #545454;
+  border: 1px solid #000;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255); 
+}
+
+.Popup button , .Reg button , .Avtor button {
+    background-color: #717171;
+    width: 100%;
+}
+
+.Popup button {
+    height: 33%;
+}
+
+.Avtor button, .Avtor input {
+    height: 15%;
+}
+
+.Avtor input, .Reg input {
+    background-color: #a1a1a1;
+    width: 90%;
+}
+.AvtorDiv {
+    margin-top: 8%;
+    height: 70%;
+}
+
+.accordion {
+    float: left;
+    overflow: hidden;
+}
+
+.panel1, .panel2, .panel3 {
+    width: 10%;
+    top: 10%;
+    display: none;
+    position: fixed;
+    background-color: rgba(38, 38, 38);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.panel1 a, .panel2 a, .panel3 a {
+    top: 10%;
+    float: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.menu1, .menu2, .menu3 {
+    padding: 2% 5% 2% 5%;
+    float: left;
+    overflow: hidden;
+}
+
+.menu1, .menu2, .menu3, .accordion {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(38, 38, 38, 0);
+    margin: 0; /* Важно для вертикального выравнивания на мобильных телефонах */
+}
+
+.basket {
+    position: absolute;
+    width: 3%;
+    top: 25%;
+    right: 8%;
+}
+
+.backToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #535353; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 30px 30px;
+  border-radius: 50%;
+  cursor: pointer; /* Указывает, что элемент является кликабельным */
+  text-decoration: none; /* Удаляет подчеркивание ссылки */
+  opacity: 0; /* Скрывает кнопку изначально */
+  transition: opacity 0.3s ease; /* Анимирует переход видимости */
+}
+
+.back-to-top-button:hover {
+  opacity: 1; /* Делает кнопку видимой при наведении */
+}
+
+.arrow-up {
+  font-size: 20px;
+  padding: 0 6px 0 6px;
+}
+
+.start {
+    font-size: 42px;
+}
+
+.head1 {
+    font-size: 52px;
+}
+
+.conf {
+    font-size: 32px;
+}
+
+.conf b{
+    font-size: 42px;
+}
+
+.polz {
+    font-size: 32px;
+}
+
+.polz b{
+    font-size: 42px;
+}
+
+.footer_main1 a, .footer_main2 a {
+    color: white;
+}
+
+.backToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #535353; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 30px 30px;
+  border-radius: 50%;
+  cursor: pointer; /* Указывает, что элемент является кликабельным */
+  text-decoration: none; /* Удаляет подчеркивание ссылки */
+  opacity: 0; /* Скрывает кнопку изначально */
+  transition: opacity 0.3s ease; /* Анимирует переход видимости */
+}
+
+.back-to-top-button:hover {
+  opacity: 1; /* Делает кнопку видимой при наведении */
+}
+
+.arrow-up {
+  font-size: 20px;
+  padding: 0 6px 0 6px;
+}
+
+footer {
+    padding: 5% 0 5%;
+    color: white;
+    background-color: #434343;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_main1, .footer_main2 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

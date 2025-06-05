@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/style.css" rel="stylesheet">
+    <title>review</title>
+</head>
+<body>
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <div class="menu__box">
+        <a href="../index.html"><img src="../image/nav.png" class="dota2"></a>
+        <div class="menu1">
+            <button class="accordion" onclick="accMenu1()">Обучение</button>
+            <div class="panel1">
+                <a class="courses">Курсы</a>
+                <br><a class="teacher">Наставники</a>
+            </div>
+        </div>
+        <div class="menu2">
+            <button class="accordion" onclick="accMenu2()">Другие услуги</button>
+            <div class="panel2">
+                <a class="shop" href="shop.html">Наш мерч</a>
+            </div>
+        </div>
+        <div class="menu3">
+            <button class="accordion" onclick="accMenu3()">О нас</button>
+            <div class="panel3">
+                <a href="review.html" class="navreview">Отзывы</a>
+                <br><a class="contackt">Контакты</a>
+                <br><a class="aboutUs" href="./html/aboutUs.html">О компании</a>
+            </div>
+        </div>
+        <img src="../image/basket.png" class="basket" onclick="toBasket()">
+        <img src="../image/guest.png" class="guest" onclick="openPopup()">
+        <img src="../image/DotaSchool.png" class="DotaSchool" onclick="openIndex()">
+        <button class="mapButton" onclick="openMap()">карта сайта</button>
+    </div>
+    <div class="Popup">
+        <button onclick="closePopup()">Закрыть</button>
+        <button onclick="openReg()">Зарегестрироваться</button>
+        <button onclick="openAvtor()">Войти</button>
+    </div>
+    <div class="Avtor">
+        <button onclick="closeAvtor()">Закрыть</button>
+        <div class="AvtorDiv">
+            Введите ваш логин
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Введите ваш пароль
+            <input type="text" required placeholder="Введите вашу пароль">
+        </div>
+        <button onclick="avtor()">Войти</button>
+    </div>
+    <div class="Reg">
+        <button onclick="closeReg()">Закрыть</button>
+        <div class="RegDIv">
+            Имя пользователя:
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Электронная почта:
+            <input type="text" required placeholder="Введите вашу электронную почту">
+            Пароль:
+            <input type="text" required placeholder="Введите пароль">
+            Подтверждение пароля:
+            <input type="text" required placeholder="Подтвердите пароль">
+        </div>
+        <button onclick="reg()">Регистрация</button>
+    </div>
+    <a id="backToTop" class="backToTopButton">
+        <i class="arrow-up">↑</i>
+    </a>
+    <h1 class="visitors"><b>Посетители: </b><div class="visitorsNum"></div></h1>
+    <div class="reviewStart">
+        <p>Отзывы наших учеников</p>
+        <br>Мы гордимся тем, что можем 
+        помочь игрокам всех уровней улучшить свои навыки в Dota 2. 
+    </div>
+    <div class="seventh_div" id="reviewsContainer">
+  <!-- отзывы будут добавляться сюда через JS -->
+</div>
+
+<button id="loadMoreReviews">Показать ещё</button>
+
+<div class="reviewFormDiv">
+  <form id="reviewForm" action="" method="get" class="form-example">
+    <div class="reviewForm">
+      <div class="reviewInputText">
+        <p>Оставьте ваш отзыв</p>
+        <br>Введите ваше имя:
+        <br><input type="text" id="name" required placeholder="Введите ваше имя">
+        <br>Введите ваш отзыв:
+        <br><input type="text" id="reviewText" required placeholder="Введите ваш отзыв">
+      </div>
+      <div class="reviewInputStars">
+        <div class="star star0" onclick="setStar(0)">★</div>
+        <div class="star star1" onclick="setStar(1)">★</div>
+        <div class="star star2" onclick="setStar(2)">★</div>
+        <div class="star star3" onclick="setStar(3)">★</div>
+        <div class="star star4" onclick="setStar(4)">★</div>
+      </div>
+      <div class="reviewButton">
+        <button type="submit">Опубликовать</button>
+      </div>
+    </div>
+  </form>
+</div>
+    <footer>
+        © 2024-2025 DotaPro School. Все права защищены.
+        <br>Следите за нами:
+        <div class="footer_main1">
+            <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
+        </div>
+        <div class="footer_main2">
+            <a href="conf.html" style="color: white;">Политика конфиденциальности </a>
+            <a href="polz.html" style="color: white;">| Пользовательское соглашение</a>
+        </div>
+    </footer>
+    <script src="../js/review.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

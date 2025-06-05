@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/footer.css" rel="stylesheet">
+    <title>conf</title>
+</head>
+<body class="conf">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <div class="menu__box">
+        <a href="../index.html"><img src="../image/nav.png" class="dota2"></a>
+        <div class="menu1">
+            <button class="accordion" onclick="accMenu1()">Обучение</button>
+            <div class="panel1">
+                <a class="courses" href="../index.html">Курсы</a>
+                <br><a class="teacher" href="../index.html">Наставники</a>
+            </div>
+        </div>
+        <div class="menu2">
+            <button class="accordion" onclick="accMenu2()">Другие услуги</button>
+            <div class="panel2">
+                <a class="shop" href="../html/shop.html">Наш мерч</a>
+            </div>
+        </div>
+        <div class="menu3">
+            <button class="accordion" onclick="accMenu3()">О нас</button>
+            <div class="panel3">
+                <a href="../html/review.html" class="navreview">Отзывы</a>
+                <br><a class="contackt">Контакты</a>
+                <br><a class="aboutUs" href="./html/aboutUs.html">О компании</a>
+            </div>
+        </div>
+        <img src="../image/basket.png" class="basket" onclick="toBasketIndex()">
+        <img src="../image/guest.png" class="guest" onclick="openPopup()">
+        <img src="../image/DotaSchool.png" class="DotaSchool" onclick="openIndex()">
+        <button class="mapButton" onclick="openMap()">карта сайта</button>
+    </div>
+    <div class="Popup">
+        <button onclick="closePopup()">Закрыть</button>
+        <button onclick="openReg()">Зарегестрироваться</button>
+        <button onclick="openAvtor()">Войти</button>
+    </div>
+    <div class="Avtor">
+        <button onclick="closeAvtor()">Закрыть</button>
+        <div class="AvtorDiv">
+            Введите ваш логин
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Введите ваш пароль
+            <input type="text" required placeholder="Введите вашу пароль">
+        </div>
+        <button onclick="avtor()">Войти</button>
+    </div>
+    <div class="Reg">
+        <button onclick="closeReg()">Закрыть</button>
+        <div class="RegDIv">
+            Имя пользователя:
+            <input type="text" required placeholder="Введите ваше имя пользователя">
+            Электронная почта:
+            <input type="text" required placeholder="Введите вашу электронную почту">
+            Пароль:
+            <input type="text" required placeholder="Введите пароль">
+            Подтверждение пароля:
+            <input type="text" required placeholder="Подтвердите пароль">
+        </div>
+        <button onclick="reg()">Регистрация</button>
+    </div>
+    <a id="backToTop" class="backToTopButton">
+        <i class="arrow-up">↑</i>
+    </a>
+    <div class="confMain">
+        <p><b class="head1">Политика конфиденциальности</b></p>
+        <p><b>1. Общие положения</b></p>
+        Настоящая Политика конфиденциальности определяет порядок обработки и
+        защиты информации, которую предоставляет пользователь при использовании 
+        сайта онлайн-школы по Dota 2 DotaSchool.
+        <p><b>2. Собираемая информация</b></p>
+        Мы можем собирать следующую информацию:
+        <br>Личные данные: имя, электронная почта, номер телефона, при регистрации
+        или оплате услуг.
+        <br>Техническую информацию: IP-адрес, тип устройства, браузер, операционная
+        система, время доступа.
+        <br>Информацию о взаимодействии с сайтом: посещенные страницы, время на
+        сайте, действия.
+        <p><b>3. Цели обработки данных</b></p>
+        Мы используем собранную информацию для:
+        <br>Предоставления образовательных услуг и поддержки пользователей.
+        <br>Улучшения работы сайта и его функционала.
+        <br>Отправки информационных сообщений, новостей и специальных предложений
+        (при согласии пользователя).
+        <br>Выполнения требований законодательства.
+        <p><b>4. Передача данных третьим лицам</b></p>
+        Мы не передаем личные данные третьим лицам без согласия пользователя,
+        за исключением случаев, предусмотренных законом или необходимых для
+        выполнения обязательств (например, платежные системы).
+        <p><b>5. Защита информации</b></p>
+        Мы принимаем меры по обеспечению безопасности данных и предотвращению
+        несанкционированного доступа.
+        <p><b>6. Права пользователя</b></p>
+        Пользователь имеет право:
+        <br>Запрашивать доступ к своим данным.
+        <br>Требовать их исправления или удаления.
+        <br>Отказаться от получения информационных сообщений.
+        <p><b>7. Изменения политики конфиденциальности</b></p>
+        Мы оставляем за собой право вносить изменения в данную Политику
+        конфиденциальности без предварительного уведомления. Новая версия
+        вступает в силу с момента публикации на сайте.
+    </div>
+    <footer>
+        © 2024-2025 DotaPro School. Все права защищены.
+        <br>Следите за нами:
+        <div class="footer_main1">
+            <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
+        </div>
+        <div class="footer_main2">
+            <a href="../html/conf.html" style="color: white;">Политика конфиденциальности </a>
+            <a href="../html/polz.html" style="color: white;">| Пользовательское соглашение</a>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>
