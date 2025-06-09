@@ -156,6 +156,7 @@ body {
 
 .basket {
     position: absolute;
+    min-width: 37px;
     width: 3%;
     top: 25%;
     right: 8%;
@@ -349,14 +350,14 @@ body {
     height: inherit;
     padding: 0;
     margin: 5% 15% 10% 15%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .review {
     background-color: #262626b3;
     margin: 5%;
-    width: 40%;
+    width: 90%;
 }
 
 .stars {
@@ -498,10 +499,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 20px;
 }
 
 .footer_main1, .footer_main2 {
     display: flex;
+    gap: 1%;
     flex-direction: row;
     text-align: center;
 }
@@ -760,7 +763,6 @@ footer {
     background-color: rgba(38, 38, 38);
     color: white;
 }
-
 .mapHead {
     margin-top: 10%;
 }
@@ -912,7 +914,9 @@ footer {
 }
 /* контейнер меню */
 .menu__box {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
   position: fixed;
   visibility: hidden;
   top: 0;
@@ -922,7 +926,7 @@ footer {
   margin: 0;
   padding: 80px 0;
   list-style: none;
-  text-align: center;
+  justify-content: start;
   background-color: #3a3a3a;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
@@ -993,6 +997,9 @@ footer {
     .fifth_main1, .fifth_main2, .fifth_main3, .fifth_main4 {
         flex-direction: column;
     }
+    .seventh_div {
+        grid-template-columns: 1fr;
+    }
     .Popup, .Avtor, .Reg {
         top: 50%;
         left: 50%;
@@ -1009,7 +1016,28 @@ footer {
         padding: 20% 5% 0 5%;
         width: 90%;
     }
-    .review {
-        width: 100%;
+    .dota2 {
+        padding: 0;
+        margin: 0 100% 0 0;
+    }
+    .guest {
+        margin-left: 5%;
+    }
+    .basket {
+        top: 32%;
+    }
+    .DotaSchool {
+        left: 35%;
+        min-width: 150px;
+        top: 4%;
+    }
+    .mapButton {
+        background-color: #3a3a3a;
+        left: 15%;
+        min-width: 200px;
+        top: 50%;
+    }
+    .view {
+        min-width: 50px;
     }
 }

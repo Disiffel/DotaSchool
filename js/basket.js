@@ -34,10 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     cart.forEach((item, index) => {
+      итог = 0;
       const pricePerItem = parseFloat(item.price);
       const quantity = item.quantity || 1;
       const totalItemPrice = pricePerItem * quantity;
       итог += totalItemPrice;
+      console.log(totalItemPrice)
 
       const div = document.createElement('div');
       div.className = 'cart-item';
@@ -79,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
           cart[index].quantity = (cart[index].quantity || 1) + 1;
           localStorage.setItem('cart', JSON.stringify(cart));
           обновитьКорзину();
+          reloadCourse();
         } else {
           alert('Достигнут лимит по покупке этого товара.');
         }
@@ -89,11 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
             cart[index].quantity -= 1;
             localStorage.setItem('cart', JSON.stringify(cart));
             обновитьКорзину();
+            reloadCourse();
           } else {
             // Если количество 1 - удаляем товар
             cart.splice(index, 1);
             localStorage.setItem('cart', JSON.stringify(cart));
             обновитьКорзину();
+            reloadCourse();
           }
         };
     });
@@ -101,6 +106,44 @@ document.addEventListener('DOMContentLoaded', () => {
     totalPriceSpan.innerText = итог.toFixed(2);
   }
   обновитьКорзину();
+  reloadCourse();
+
+  function reloadCourse() {
+    const cours = JSON.parse(localStorage.getItem('cours')) || [];
+    const courseContainer = document.getElementById('cartCourses');
+
+    courseContainer.innerHTML = ''; // очищаем контейнер перед отображением
+
+    if (cours.length === 0) {
+      courseContainer.innerHTML = '<p>Корзина пуста.</p>';
+    } else {
+      cours.forEach((course, index) => {
+        const courseDiv = document.createElement('div');
+        courseDiv.innerHTML = `
+          <strong>${course.title}</strong>
+          ${course.description}
+          Цена: ${course.cost}₽
+          <button class="delete" data-index="${index}" style="margin-left:2%;">Удалить</button>
+        `;
+        courseContainer.appendChild(courseDiv);
+        итог += parseFloat(course.cost);
+      });
+
+      // Назначаем обработчики для кнопок удаления
+      document.querySelectorAll('.delete').forEach(btn => {
+        btn.onclick = () => {
+          const index = parseInt(btn.getAttribute('data-index'));
+          const cours = JSON.parse(localStorage.getItem('cours')) || [];
+          cours.splice(index, 1); // удаляем выбранный курс
+          localStorage.setItem('cours', JSON.stringify(cours));
+          reloadCourse();
+          обновитьКорзину();
+        };
+      });
+      };
+      totalPriceSpan.innerHTML = итог;
+    };
+
 });
 
   function buy() {
@@ -213,15 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (item.category === 'одежда' && item.selectedSize) {
       message += `\n• ${item.name} - ${sizeInfo} - ${item.quantity} шт. x ${item.price} руб.`;
-      totalSum += item.quantity * item.price;
+      totalSum += parseFloat(item.quantity) * parseFloat(item.price);
     } else {
       message += `\n• ${item.name} - ${item.quantity} шт. x ${item.price} руб.`;
-      totalSum += item.quantity * item.price;
+      totalSum += parseFloat(item.quantity) * parseFloat(item.price);
     };
     });
     cours.forEach(course => {
       message += `\n• ${course.title} - ${course.description} - ${course.cost} руб.`;
-      totalSum += course.cost;
+      totalSum += parseFloat(course.cost);
     })
 
   
@@ -254,43 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Ошибка: ' + error);
     });
   });
-
-    function reloadCourse() {
-    const cours = JSON.parse(localStorage.getItem('cours')) || [];
-    const courseContainer = document.getElementById('cartCourses');
-
-    courseContainer.innerHTML = ''; // очищаем контейнер перед отображением
-
-    if (cours.length === 0) {
-      courseContainer.innerHTML = '<p>Корзина пуста.</p>';
-    } else {
-      cours.forEach((course, index) => {
-        const courseDiv = document.createElement('div');
-        courseDiv.innerHTML = `
-          <strong>${course.title}</strong>
-          ${course.description}
-          Цена: ${course.cost}₽
-          <button class="delete" data-index="${index}" style="margin-left:2%;">Удалить</button>
-        `;
-        courseContainer.appendChild(courseDiv);
-        итог += parseFloat(course.cost);
-      });
-
-      // Назначаем обработчики для кнопок удаления
-      document.querySelectorAll('.delete').forEach(btn => {
-        btn.onclick = () => {
-          const index = parseInt(btn.getAttribute('data-index'));
-          const cours = JSON.parse(localStorage.getItem('cours')) || [];
-          cours.splice(index, 1); // удаляем выбранный курс
-          localStorage.setItem('cours', JSON.stringify(cours));
-          reloadCourse(); // повторно обновляем
-        };
-      });
-    }
-    totalPriceSpan.innerHTML = итог;
-  }
-
   // Изначально показываем корзину
   window.onload = () => {
     reloadCourse();
+    обновитьКорзину();
   };

@@ -17,6 +17,8 @@ function updateVisitCounter() {
     counter.style.left = '5%';
     counter.style.color = 'white';
     counter.style.fontSize = '12pt';
+    counter.style.width = '10%';
+    counter.style.minWidth = '120px';
     counter.textContent = 'Количество посещений: ' + visits;
     document.body.appendChild(counter);
   }

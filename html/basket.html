@@ -31,7 +31,7 @@
             <div class="panel3">
                 <a href="review.html" class="navreview">Отзывы</a>
                 <br><a class="contackt">Контакты</a>
-                <br><a class="aboutUs" href="./html/aboutUs.html">О компании</a>
+                <br><a class="aboutUs" href="aboutUs.html">О компании</a>
             </div>
         </div>
         <img src="../image/basket.png" class="basket" onclick="toBasket()">
@@ -44,27 +44,28 @@
         <button onclick="openReg()">Зарегестрироваться</button>
         <button onclick="openAvtor()">Войти</button>
     </div>
-    <div class="Avtor">
+    <div class="Avtor" style="display:none;">
         <button onclick="closeAvtor()">Закрыть</button>
         <div class="AvtorDiv">
             Введите ваш логин
-            <input type="text" required placeholder="Введите ваше имя пользователя">
+            <input type="text" id="login" required placeholder="Введите ваше имя пользователя">
             Введите ваш пароль
-            <input type="text" required placeholder="Введите вашу пароль">
+            <input type="text" id="password" required placeholder="Введите вашу пароль">
         </div>
         <button onclick="avtor()">Войти</button>
     </div>
-    <div class="Reg">
+    
+    <div class="Reg" style="display:none;">
         <button onclick="closeReg()">Закрыть</button>
         <div class="RegDIv">
             Имя пользователя:
-            <input type="text" required placeholder="Введите ваше имя пользователя">
+            <input type="text" id="reg_username" required placeholder="Введите ваше имя пользователя">
             Электронная почта:
-            <input type="text" required placeholder="Введите вашу электронную почту">
+            <input type="text" id="reg_email" required placeholder="Введите вашу электронную почту">
             Пароль:
-            <input type="text" required placeholder="Введите пароль">
+            <input type="text" id="reg_password" required placeholder="Введите пароль">
             Подтверждение пароля:
-            <input type="text" required placeholder="Подтвердите пароль">
+            <input type="text" id="reg_confirm_password" required placeholder="Подтвердите пароль">
         </div>
         <button onclick="reg()">Регистрация</button>
     </div>
@@ -107,8 +108,8 @@
             <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
         </div>
         <div class="footer_main2">
-            <a href="conf.html" style="color: white;">Политика конфиденциальности&ensp;</a>
-            <a href="polz.html" style="color: white;">|&ensp;Пользовательское соглашение</a>
+            <a href="conf.html" style="color: white;">Политика конфиденциальности</a>
+            <a href="polz.html" style="color: white;">Пользовательское соглашение</a>
         </div>
     </footer>
     <script src="../js/basket.js"></script>
