@@ -23,7 +23,7 @@
         <div class="menu2">
             <button class="accordion" onclick="accMenu2()">Другие услуги</button>
             <div class="panel2">
-                <a class="shop" href="./html/shop.html">Наш мерч</a>
+                <a class="shop" href="./html/shop.html">Наш магазин</a>
             </div>
         </div>
         <div class="menu3">
@@ -82,6 +82,26 @@
             <p>Прокачай свой <br>скилл в DOTA2!</p>
             <br>Присоединяйся к нам. Ты получишь <br>продуктивные тренировки  с лучшими <br>тренерами нашей школы!
         </div>
+    </div>
+    <div id="ageWarning" style="display: none;">
+    <div id="warningBox">
+        <h2>Вам необходимо подтвердить возраст</h2>
+        <p>Вы достигли 16 лет?</p>
+        <div class="buttons">
+        <button id="confirmBtn">Да</button>
+        <button id="declineBtn">Нет</button>
+        </div>
+    </div>
+    </div>
+    <div id="permWarning" style="display: none;">
+    <div id="warningBox">
+        <h2>Вам необходимо получить разрешение от родителей</h2>
+        <p>Вы получили его?</p>
+        <div class="buttons">
+        <button id="confirmBtn1">Да</button>
+        <button id="declineBtn1">Нет</button>
+        </div>
+    </div>
     </div>
     <div class="start_image">
         <div class="first_image">
@@ -351,8 +371,6 @@
             <br>Роли и позиции героев
             <br>Основы фарма и контроля карты
             <br>Командная работа и коммуникация
-            <p>Стоимость: 2990₽</p>
-            <button class="add-to-cart" data-course='{"title":"Курсы для начинающих","description":"Основы Dota 2","cost":"2990"}'>Добавить в корзину</button>
         </div>
         <div class="sixth_div_main2">
             <p>Курсы для среднего уровня</p>
@@ -367,8 +385,6 @@
             <br>Тайминг предметов и их влияние на игру
             <br>Командные стратегии и синергия героев
             <br>Психология игры и управление эмоциями
-            <p>Стоимость: 4990₽</p>
-            <button class="add-to-cart" data-course='{"title":"Курсы для среднего уровня","description":"Продвинутые стратегии","cost":"4990"}'>Добавить в корзину</button>
         </div>
         <div class="sixth_div_main3">
             <p>Курсы для продвинутых игроков</p>
@@ -382,9 +398,10 @@
             <br>Специфика героев и их взаимодействие
             <br>Тактики против различных противников
             <br>Разработка личной стратегии игры
-            <p>Стоимость: 5990₽</p>
-            <button class="add-to-cart" data-course='{"title":"Курсы для продвинутых игроков","description":"Мастерство на позиции","cost":"5990"}'>Добавить в корзину</button>
+            <!-- <p>Стоимость: 5990₽</p>
+            <button class="add-to-cart" data-course='{"title":"Курсы для продвинутых игроков","description":"Мастерство на позиции","cost":"5990"}'>Добавить в корзину</button> -->
         </div>
+        <button onclick="openCoursesIndex()">Подробнее здесь</button>
     </div>
     <div class="blind sixth_end">
         <p>Готовы начать свое путешествие в мир Dota 2? Присоединяйтесь к нашим курсам уже сегодня</p>
@@ -471,7 +488,7 @@
         <button class="seventh_div_button" onclick="toReviews()">Оставить отзыв</button>
     </div>
     <footer>
-        © 2024-2025 DotaPro School. Все права защищены.
+        © 2024-2025 DotaSchool. Все права защищены.
         <br>Следите за нами:
         <div class="footer_main1">
             <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
@@ -482,6 +499,5 @@
         </div>
     </footer>
     <script src="./js/index.js"></script>
-    <script src="./js/script.js"></script>
 </body>
 </html>
