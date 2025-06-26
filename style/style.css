@@ -8,6 +8,72 @@ body {
     font-size: 20px;
 }
 
+  #ageWarning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #permWarning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #warningBox {
+    background: #202020;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  #warningBox h2 {
+    margin-top: 0;
+  }
+
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #confirmBtn, #confirmBtn1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #declineBtn, #declineBtn1 {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
 .DotaSchool {
     width: 10%;
     position: absolute;
@@ -34,6 +100,7 @@ body {
     background-color: rgba(38, 38, 38);
     font-family: Arial;
     top: 0;
+    z-index: 9998;
 }
 
 .courses, .teacher, .contackt, .navreview, .shop {
@@ -709,7 +776,7 @@ footer {
     font-size: 24px;
 }
 
-#TGID, #customerPhone, #customerName {
+#TGID, #customerPhone, #customerName, #adres {
     width: 90%;
 }
 
@@ -815,6 +882,230 @@ footer {
    to {
     transform: translateX(-100%);
    }
+}
+
+.coursesStart {
+    padding: 10% 0 0 0;
+    font-size: 40px;
+}
+
+.coursesMain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.coursesMain1, .coursesMain2, .coursesMain3 {
+  background: #3e3e3e;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 350px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.coursesMain1:hover, .coursesMain2:hover, .coursesMain3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.schedule_section {
+  padding: 30px;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+.schedule_section h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.schedule_section p {
+  max-width: 800px;
+  margin: 0 auto 25px auto;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: center;
+  color: #ffffff;
+}
+
+.schedule_table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.schedule_table thead {
+  background-color: #363636;
+  color: #ecf0f1;
+}
+
+.schedule_table thead th {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.schedule_table tbody tr {
+  background-color: #282828;
+  transition: background-color 0.3s ease;
+}
+
+.schedule_table tbody tr:nth-child(even) {
+  background-color: #282828;
+}
+
+.schedule_table tbody tr:hover {
+  background-color: #363636;
+}
+
+.schedule_table td {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.schedule_section a {
+  color: #2980b9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.schedule_section a:hover {
+  color: #3498db;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.play-button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+ul {
+    text-align: left;
+}
+
+.persAccount {
+    background-color: #363636;
+    padding: 5%;
+    margin: 0 10% 0 10%;
+    justify-content: center;
+}
+
+.accountProfile {
+    margin: 10% 0 0 0;
+}
+
+.username {
+    font-size: 32px;
+}
+
+.exitProfile {
+    color: #ffffff;
+    background-color: #363636;
+    right: 12%;
+    top: 12%;
+    position: absolute;
+    height: 5%;
+}
+
+@media(max-width: 768px) {
+  .schedule_table, .schedule_table thead, .schedule_table tbody, .schedule_table tr, .schedule_table th, .schedule_table td {
+    display: block;
+  }
+  .schedule_table thead {
+    display: none;
+  }
+  .schedule_table tr {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+  .schedule_table td {
+    padding: 10px;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+  .schedule_table td::before {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 500px) {

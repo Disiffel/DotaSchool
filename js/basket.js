@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = document.getElementById('customerName').value;
     const phone = document.getElementById('customerPhone').value;
     const tgID = document.getElementById('TGID').value;
+    const adres = document.getElementById('adres').value;
 
     // Тут можно получить информацию о корзине, например, из переменной или DOM
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -246,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <b>Имя:</b> ${name}
     <b>Телефон:</b> ${phone}
     <b>Telegram ID:</b> ${tgID}
+    <b>Адрес:</b> ${adres}
     <b>Корзина:</b> `;
 
     let totalSum = 0;
@@ -286,9 +288,16 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       if (data.ok) {
         alert('Данные отправлены успешно!');
-        localStorage.clear('cart');
+        const history = JSON.parse(localStorage.getItem('history')) || [];
+        const currentPurchase = JSON.parse(localStorage.getItem('cart')) || [];
+        history.push({
+          date: new Date().toLocaleString(),
+          items: currentPurchase
+        });
+        localStorage.setItem('history', JSON.stringify(history));
+        localStorage.removeItem('cart');
         document.getElementById('payment').style.display = 'none';
-        location.reload();
+        window.location.href = 'https://qr.nspk.ru/BD20007RV10SUM0183KBRDB7MJGE7IML?type=02&bank=100000000013&sum=5000&cur=RUB&crc=BE4F';
       } else {
         alert('Ошибка отправки: ' + data.description);
       }

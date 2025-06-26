@@ -296,7 +296,9 @@ function reg() {
     };
 
     localStorage.setItem('user', JSON.stringify(userData));
-    location.href = './html/personal_account.html';
+    alert('Регистрация прошла успешно! Теперь войдите в систему.');
+
+    closeReg();
 }
 
 // Вход
@@ -326,17 +328,106 @@ document.querySelector('.guest').addEventListener('click', function() {
         window.location.href = 'personal_account.html'; 
     } else {
         alert('Пожалуйста, войдите или зарегистрируйтесь.');
-        openPopup();
+        openAvtor();
     }
 });
 
+const avatarImg = document.querySelector('.avatar');
+const avatarInput = document.getElementById('avatarInput');
+
 window.onload = function() {
-  const guest = document.querySelector('.guest');
-  const avatarData = localStorage.getItem('avatarImage');
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+        const user = JSON.parse(userStr);
+        document.querySelector('.username').textContent = user.username;
+    }
+
+    const guest = document.querySelector('.guest');
+    const avatarData = localStorage.getItem('avatarImage');
     if (avatarData) {
+        avatarImg.src = avatarData;
+        avatarImg.style.width = '100px';
+        avatarImg.style.height = '100px';
+        avatarImg.style.borderRadius = '50%';
         guest.src = avatarData;
         guest.style.width = '50px';
         guest.style.height = '50px';
         guest.style.borderRadius = '50%';
     }
+    const storyDiv = document.querySelector('.story');
+    const history = JSON.parse(localStorage.getItem('history')) || [];
+
+    let visibleCount = 3;
+    const increment = 2;
+
+    const showMoreBtn = document.createElement('button');
+    showMoreBtn.innerText = 'Показать еще';
+    showMoreBtn.style.display = 'none';
+    showMoreBtn.style.marginTop = '10px';
+
+    function renderPurchases() {
+        storyDiv.innerHTML = '';
+
+        const toShow = history.slice(-visibleCount).reverse();
+
+        toShow.forEach((purchase) => {
+        const purchaseDiv = document.createElement('div');
+        purchaseDiv.style.border = '1px solid #ccc';
+        purchaseDiv.style.padding = '10px';
+        purchaseDiv.style.marginBottom = '10px';
+
+        let content = `<strong>Дата:</strong> ${purchase.date}<br/>`;
+        content += '<ul>';
+        purchase.items.forEach(item => {
+            content += `<li>${item.name} x ${item.quantity || 1} (${item.price}₽)</li>`;
+        });
+        content += '</ul>';
+
+        purchaseDiv.innerHTML = content;
+        storyDiv.appendChild(purchaseDiv);
+        });
+
+        if (history.length > visibleCount) {
+        showMoreBtn.style.display = 'block';
+        } else {
+        showMoreBtn.style.display = 'none';
+        }
+    }
+
+    showMoreBtn.onclick = () => {
+        visibleCount += increment;
+        renderPurchases();
+    };
+
+    renderPurchases();
+
+    storyDiv.parentNode.insertBefore(showMoreBtn, storyDiv.nextSibling);
+};
+
+avatarImg.onclick = () => {
+    avatarInput.click();
+};
+
+avatarInput.onchange = () => {
+    const file = avatarInput.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const dataUrl = reader.result;
+            localStorage.setItem('avatarImage', dataUrl);
+            avatarImg.src = dataUrl;
+        };
+        reader.readAsDataURL(file);
+        location.reload();
+    } else {
+        alert('Пожалуйста, выберите изображение.');
+    }
+};
+
+document.querySelector('.exitProfile').onclick = () => {
+    localStorage.removeItem('history');
+    localStorage.removeItem('avatarImage');
+    localStorage.removeItem('user');
+    location.reload();
+    location.href = '../index.html';
 }

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../style/style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <div class="menu__box">
+        <a href="../index.html"><img src="../image/nav.png" class="dota2"></a>
+        <div class="menu1">
+            <button class="accordion" onclick="accMenu1()">Обучение</button>
+            <div class="panel1">
+                <a class="courses" href="./courses.html">Курсы</a>
+                <br><a class="teacher">Наставники</a>
+            </div>
+        </div>
+        <div class="menu2">
+            <button class="accordion" onclick="accMenu2()">Другие услуги</button>
+            <div class="panel2">
+                <a class="shop" href="./shop.html">Наш магазин</a>
+            </div>
+        </div>
+        <div class="menu3">
+            <button class="accordion" onclick="accMenu3()">О нас</button>
+            <div class="panel3">
+                <a href="./review.html" class="navreview">Отзывы</a>
+                <br><a class="contackt">Контакты</a>
+                <br><a class="aboutUs" href="./aboutUs.html">О компании</a>
+            </div>
+        </div>
+        <img src="../image/basket.png" class="basket" onclick="toBasket()">
+        <img src="../image/guest.png" class="guest" onclick="openPopup()">
+        <img src="../image/view.png" class="view">
+        <img src="../image/DotaSchool.png" class="DotaSchool" onclick="openIndex()">
+        <button class="mapButton" onclick="openMap()">карта сайта</button>
+    </div>
+    <div class="Popup">
+        <button onclick="closePopup()">Закрыть</button>
+        <button onclick="openReg()">Зарегестрироваться</button>
+        <button onclick="openAvtor()">Войти</button>
+    </div>
+    <div class="Avtor" style="display:none;">
+        <button onclick="closeAvtor()">Закрыть</button>
+        <div class="AvtorDiv">
+            Введите ваш логин
+            <input type="text" id="login" required placeholder="Введите ваше имя пользователя">
+            Введите ваш пароль
+            <input type="text" id="password" required placeholder="Введите вашу пароль">
+        </div>
+        <button onclick="avtor()">Войти</button>
+    </div>
+    
+    <div class="Reg" style="display:none;">
+        <button onclick="closeReg()">Закрыть</button>
+        <div class="RegDIv">
+            Имя пользователя:
+            <input type="text" id="reg_username" required placeholder="Введите ваше имя пользователя">
+            Электронная почта:
+            <input type="text" id="reg_email" required placeholder="Введите вашу электронную почту">
+            Пароль:
+            <input type="text" id="reg_password" required placeholder="Введите пароль">
+            Подтверждение пароля:
+            <input type="text" id="reg_confirm_password" required placeholder="Подтвердите пароль">
+        </div>
+        <button onclick="reg()">Регистрация</button>
+    </div>
+    <a id="backToTop" class="backToTopButton">
+        <i class="arrow-up">↑</i>
+    </a>
+    <p class="coursesStart">Наши курсы</p>
+    <div class="coursesMain">
+    <div class="coursesMain1">
+        <h3>Курсы для начинающих</h3>
+        
+        <h4>Основы Dota 2</h4>
+        <p><strong>Длительность курса:</strong> 4 недели</p>
+        <p>
+        Этот курс предназначен для тех, кто только начинает свой путь в Dota 2. 
+        В рамках курса вы получите фундаментальные знания о механиках игры, познакомитесь с ролями героев и научитесь важнейшим аспектам успешной игры.
+        </p>
+        
+        <h5>Описание курса:</h5>
+        <ul>
+        <li><strong>Введение в игру и интерфейс:</strong> знакомство с основными меню, картой, настройками и режимами игры.</li>
+        <li><strong>Роли и позиции героев:</strong> изучение различных ролей (кэрри, мид, саппорт, оффлейн), их задач и особенностей.</li>
+        <li><strong>Основы фарма и контроля карты:</strong> как правильно получать золото и опыт, управление линиями и позиционирование.</li>
+        <li><strong>Командная работа и коммуникация:</strong> важность взаимодействия с командой, использование чата и голосовых команд.</li>
+        </ul>
+        
+        <h5>Что вы узнаете по итогам:</h5>
+        <ul>
+        <li>Как ориентироваться в интерфейсе и карте</li>
+        <li>Основные механики фарма и контроля карты</li>
+        <li>Роль и обязанности каждого героя</li>
+        <li>Эффективное взаимодействие с командой</li>
+        </ul>
+        
+        <p><strong>Стоимость курса:</strong> 2990₽</p>
+        <button class="add-to-cart" data-course='{"title":"Курсы для начинающих","description":"Основы Dota 2","cost":"2990"}'>Добавить в корзину</button>
+    </div>
+    <div class="coursesMain2">
+        <h3>Курсы для среднего уровня</h3>
+        
+        <h4>Продвинутые стратегии</h4>
+        <p><strong>Длительность курса:</strong> 6 недель</p>
+        <p>
+        Этот курс предназначен для игроков, у которых уже есть базовые знания и опыт. 
+        Он поможет вам понять более сложные тактики, улучшить игру на мид-гейме и научиться адаптироваться к изменениям в метагейме.
+        </p>
+        
+        <h5>Описание курса:</h5>
+        <ul>
+        <li><strong>Анализ матчей и разбор ошибок:</strong> как правильно анализировать свои игры и выявлять слабые стороны.</li>
+        <li><strong>Тайминг предметов и влияние на игру:</strong> когда и что покупать, чтобы максимально использовать потенциал героев.</li>
+        <li><strong>Командные стратегии и синергия героев:</strong> как строить командные комбинации, работая с союзниками.</li>
+        <li><strong>Психология игры и управление эмоциями:</strong> как сохранять спокойствие и сосредоточенность в напряжённых ситуациях.</li>
+        </ul>
+        
+        <h5>Что вы получите:</h5>
+        <ul>
+        <li>Глубокое понимание тактик и стратегии</li>
+        <li>Умение анализировать свои игры и исправлять ошибки</li>
+        <li>Навыки адаптации к разным ситуациям в матчах</li>
+        <li>Повышение командной игры и взаимодействия</li>
+        </ul>
+        
+        <p><strong>Стоимость курса:</strong> 3990₽</p>
+        <button class="add-to-cart" data-course='{"title":"Курсы для среднего уровня","description":"Продвинутые стратегии","cost":"3990"}'>Добавить в корзину</button>
+    </div>
+    <div class="coursesMain3">
+        <h3>Курсы для продвинутых игроков</h3>
+        
+        <h4>Мастерство на позиции</h4>
+        <p><strong>Длительность курса:</strong> 8 недель</p>
+        <p>
+        Этот курс создан для тех, кто хочет стать экспертом в своей роли (керри, мид, саппорт). 
+        В рамках курса вы получите индивидуальные занятия с наставником, который поможет вам отточить навыки и разработать личную стратегию.
+        </p>
+        
+        <h5>Описание курса:</h5>
+        <ul>
+        <li><strong>Глубокий анализ выбранной роли:</strong> особенности и тактики для вашей позиции.</li>
+        <li><strong>Специфика героев и взаимодействие:</strong> как правильно использовать сильные стороны героев и взаимодействовать с командой.</li>
+        <li><strong>Тактики против различных противников:</strong> как адаптироваться к стратегии оппонента.</li>
+        <li><strong>Разработка личной стратегии игры:</strong> построение индивидуального плана для постоянного улучшения.</li>
+        </ul>
+        
+        <h5>Что входит:</h5>
+        <ul>
+        <li>Индивидуальные занятия с наставником</li>
+        <li>Обучение анализу своих игр и ошибок</li>
+        <li>Практические советы по развитию навыков</li>
+        <li>Поддержка и обратная связь по прогрессу</li>
+        </ul>
+        
+        <p><strong>Стоимость курса:</strong> 5990₽</p>
+        <button class="add-to-cart" data-course='{"title":"Курсы для продвинутых игроков","description":"Мастерство на позиции","cost":"5990"}'>Добавить в корзину</button>
+    </div>
+    </div>
+    <div class="schedule_section">
+        <h2>Расписание совместных онлайн-курсов по Dota 2</h2>
+        <p>Наши курсы проходят в удобное время для игроков с разным уровнем подготовки. Ниже вы найдете расписание ближайших занятий. Все занятия проводятся онлайн в формате видеоконференций с возможностью задавать вопросы и получать обратную связь от наставников.</p>
+        
+        <table class="schedule_table" border="1" cellpadding="10" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Название курса</th>
+                <th>Тема занятия</th>
+                <th>Описание</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>15 июля 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Основы Dota 2</td>
+                <td>Введение в игру и интерфейс</td>
+                <td>Познакомимся с интерфейсом, настройками и базовой механикой игры для новичков.</td>
+            </tr>
+            <tr>
+                <td>22 июля 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Роли и герои</td>
+                <td>Понимание ролей и позиций героев</td>
+                <td>Обсудим обязанности каждого героя и как правильно их использовать в игре.</td>
+            </tr>
+            <tr>
+                <td>29 июля 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Фарм и карта</td>
+                <td>Основы фарминга и контроля карты</td>
+                <td>Научимся эффективно зарабатывать золото и управлять картой для победы.</td>
+            </tr>
+            <tr>
+                <td>5 августа 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Командная стратегия</td>
+                <td>Работа в команде и коммуникация</td>
+                <td>Изучим важность взаимодействия и командных тактик.</td>
+            </tr>
+            <tr>
+                <td>12 августа 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Продвинутый мид-гейм</td>
+                <td>Понимание и контроль середины игры</td>
+                <td>Разберем ключевые моменты мид-гейма и стратегии их реализации.</td>
+            </tr>
+            <tr>
+                <td>19 августа 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Лейтгейм и завершение игры</td>
+                <td>Финальные стадии и подготовка к победе</td>
+                <td>Обсудим тактики и как довести игру до победного финала.</td>
+            </tr>
+            <tr>
+                <td>26 авгутса 2025</td>
+                <td>19:00 - 21:00</td>
+                <td>Анализ и разбор игр</td>
+                <td>Практика анализа своих матчей</td>
+                <td>Научимся выявлять ошибки и строить план улучшения.</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="video-container">
+            <h3>Посмотрите наши совместные курсы можно здесь</h3>
+            <div class="video-wrapper">
+            <div class="video-placeholder" onclick="loadVideo()">
+                <img src="https://via.placeholder.com/800x450?text=Видео+недоступно" alt="Видео недоступно" />
+                <div class="play-button">&#9658; Посмотреть видео</div>
+            </div>
+            <iframe id="videoIframe" src="" frameborder="0" allowfullscreen style="display:none;"></iframe>
+            </div>
+        </div>
+        </div>
+    <footer>
+        © 2024-2025 DotaSchool. Все права защищены.
+        <br>Следите за нами:
+        <div class="footer_main1">
+            <a href="https://web.telegram.org/a/#-1001529000598" style="color: white;">Telegram</a>
+        </div>
+        <div class="footer_main2">
+            <a href="./conf.html" style="color: white;">Политика конфиденциальности</a>
+            <a href="./polz.html" style="color: white;">Пользовательское соглашение</a>
+        </div>
+    </footer>
+    <script src="../js/courses.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
